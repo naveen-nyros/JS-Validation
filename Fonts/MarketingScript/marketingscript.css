@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'MarketingScriptRegular';
+    src: url('marketingscript.eot');
+    src: url('marketingscript.eot') format('embedded-opentype'),
+         url('marketingscript.woff') format('woff'),
+         url('marketingscript.ttf') format('truetype'),
+         url('marketingscript.svg#MarketingScriptRegular') format('svg');
+}

@@ -1,0 +1,199 @@
+<html>
+
+<head>
+<title>
+Registration Form
+</title>
+
+<link rel="stylesheet" href="./CSS/form.css" type="text/css">
+
+<script src="./JS/valid.js"></script>
+
+<script src="./JS/dob.js"></script>
+
+<script src="./JS/progress.js"></script>
+<script src="./JS/details.js"></script>
+
+</head>
+
+<body   onload="fillup()">
+
+<p id="success"><span>Well done!</span>You Successfully did it.<span id ="closed" ><a><img src="./images/close.png" alt="closed" title="close the window for clicking this one" onclick="closed()"/></a></span></p>
+<div class="progressbar">
+
+<progress value="0" max="100"  id="progress" class="progress">
+
+</progress>
+
+<p id="demo"></p>
+</div>
+
+<section>
+
+
+<h1 style="text-align:center;">
+Registration Form
+
+</h1>
+
+
+
+
+<form name="Accountform" onsubmit=" return validation()">
+
+<fieldset id="user">
+
+<legend>
+User information
+</legend>
+<br>
+
+<label> Username<sup>*</sup></label>
+
+<input type="text" id="uname" name="uname" maxlength="20"   title="username must contains 5 to 8 characters " onblur="usernamevalidation()" onchange="prounamevalidation()" placeholder="UserName" autocomplete="off"></input>
+
+<br>
+<label> Password<sup>*</sup>
+</label>
+<input type="password" id="pwd"  maxlength="16" placeholder="Password" onblur="passwordvalidation()" onchange="propwdvalidation()" autocomplete="off"></input>
+
+<br><br>
+</fieldset>
+
+<fieldset id="profile">
+
+
+<legend>Profile information</legend>
+
+<label> Firstname<sup>*</sup></label>
+
+<input type="text" id="fname"  onblur="firstnamevalidation()" onchange="profnamevalidation()" placeholder="FirstName" autocomplete="off">
+<br>
+<label> Lastname<sup>*</sup></label>
+
+<input type="text" id="lname" onblur="lastnamevalidation()"  onchange="prolnamevalidation()" placeholder="LastName" autocomplete="off">
+<br><label> Profile Pic<sup>*</sup></label>
+
+<input type="file" name="proflile-pic" size="30" id="browse" onblur="profilepicvalidation()" onchange="propicvalidation()" autocomplete="off"></input>
+
+
+<br>
+
+
+<label>Gender:<sup>*</sup></label>
+
+<div id="gender">
+<input type="radio" name="sex" id="male"  onblur="checkgender()"  onchange="progendervalidation()"  autocomplete="off">Male</input><br>
+
+
+<input type="radio" name="sex" id="female" onblur="checkgender()" onchange="progendervalidation()" autocomplete="off">Female</input>
+</div>
+<br>
+
+<label>Date of Birth<sup>*</sup></label>
+
+<select id="day" onblur="dobvalidation()" onchange="prodobvalidation()" autocomplete="off">
+ 
+<option value="">select Day</option>
+  
+
+</select>
+
+<select id="month" onblur="dobvalidation()" onchange="prodobvalidation()" autocomplete="off">
+ 
+ <option value="">select Months</option>
+
+</select>
+
+<select id="year"  onblur="dobvalidation()" onchange="prodobvalidation()" autocomplete="off">
+
+<option value="">select Year</option>
+
+  </select>
+<br>
+
+
+<label style="position:relative;top:35px;">Hobbies<sup>*</sup></label>
+
+<div id="hobbies">
+<div id="sub-hob1">
+<input type="radio" name="hobbies1" class="hob" id="h1"  value="Painting"  onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Painting</input><br>
+<input type="radio" name="hobbies2" class="hob" id="h2" value="Singing"   onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Singing</input>
+<br>
+<input type="radio" name="hobbies3"  class="hob" id="h3" value="Travelling" onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Travelling</input><br>
+
+</div>
+<div id="sub-hob2">
+
+<input type="radio" name="hobbies4"  class="hob" id="h4" value="Dancing" onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Dancing </input><br>
+
+<input type="radio" name="hobbies5" class="hob" id="h5"  value="Gardening" onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Gardening</input>
+<br>
+<input type="radio" name="hobbies6" class="hob" id="h6" value="Others" onblur="hobbiesvalidation()" onchange="prohobbiesvalidation()" autocomplete="off">Others</input><br>
+
+</div>	
+</div >
+<label style="position:relative;top:-25px;margin-right:3px;">Have been to<sup>*</sup></label>
+
+<select id="countries"  multiple onblur="countriesvalidation()" onchange="  procountriesvalidation()" autocomplete="off">
+
+  <option value="select country" >select Country</option>
+
+  </select>
+
+</fieldset>
+
+<fieldset id="contact">
+
+<legend>Contact information</legend>
+
+<label>phone no:<sup>*</sup></label>
+<input type="phone" id="phone"onblur="phonenovalidation()" onchange="prophonevalidation()" autocomplete="off" placeholder="+ 91 (888)-123-1234"/><br>
+
+<input type="submit" value="submit"/ >
+</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+</section>
+
+
+
+</body>
+
+
+
+</html>

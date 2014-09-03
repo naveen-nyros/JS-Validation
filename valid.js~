@@ -1,0 +1,822 @@
+
+
+ count=0;
+ valid=0;
+
+/*function validation()
+
+{
+alert("validation");
+ var v1=unamevalidation();
+
+  var v2=pwdvalidation();
+
+var v3=fnamevalidation()
+
+var v4=lnamevalidation();
+
+var v5=profilepicvalidation();
+
+var v6=checkgender();
+
+var v10=phonevalidation();
+
+
+if(v1&&v2&&v3&&v4)
+alert("submit successfully");
+else
+ alert("please fill all the feilds");
+
+if(v1)
+{
+
+
+
+ if(v2)
+  {
+  if(v3)
+    {
+     if(v4)
+      {
+     alert("submit successfully");
+      }
+   else
+    alert("last name is not valid")  
+     }
+  else
+  alert("first name is not valid");
+  }
+  else
+   alert("password is not valid");  
+}    
+else
+
+alert(" user name is not valid plz fill it properly");
+
+
+}*/
+
+function validation()
+{
+
+var v1=unamevalidation();
+
+
+if(v1==false)
+{
+return false;
+}
+var v2=pwdvalidation();
+if(v2==false)
+{
+return false;
+}
+var v3=fnamevalidation();
+if(v3==false)
+{
+return false;
+}
+var v4=lnamevalidation();
+if(v4==false)
+{
+return false;
+}
+var v5=profilepicvalidation();
+if(v5==false)
+{
+return false;
+}
+var v6=checkgender();
+if(v6==false)
+{
+return false;
+}
+var v7=dayvalidation();
+if(v7==false)
+{
+return false;
+}
+var v8=monthvalidation();
+if(v8==false)
+{
+return false;
+}
+var v9=yearvalidation();
+if(v9==false)
+{
+return false;
+}
+
+
+
+var v10= hobbiesvalidation();
+if(v10==false)
+{
+return false;
+}
+var v11=countriesvalidation();
+if(v11==false)
+{
+return false;
+}
+var v12=phonevalidation();
+if(v12==false)
+{
+return false;
+}
+
+
+
+
+
+
+
+
+//if((v1&&v2)&&(v3&&v4)&&(v5&&v6)&&(v7&&v8)&&(v9&&v10)&&(v11&&v12))
+//{
+//alert("form submitted");
+
+//return 
+//}
+//else
+//alert(" please fill all the fields");
+
+
+else 
+{
+
+
+finishtime();
+return true;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*USERNAME VALIDATION*/
+
+function unamevalidation() 
+{ 
+
+var uname=document.getElementById("uname").value;
+
+var reg = /^((?:[A-z]+)[a-zA-Z0-9]{5,8})$/;
+
+if(uname==""||uname.length<5||uname.length>8)  
+{
+var msg="please should not be empty and it must contains 5 to 8 charcters";
+
+	alert(msg);
+  document.getElementById("uname").focus();
+
+ document.getElementById("uname").select();
+
+
+     return false;
+}
+else if(reg.test(uname) == false)
+ 
+   {
+	
+var msg="username must be contains alphanumeric characters";
+
+	alert(msg);
+
+        document.getElementById("uname").focus();
+
+	document.getElementById("uname").select();
+          return false;
+
+    }
+ 
+ else 
+    
+    { 
+ 
+ 
+	
+return true;
+
+}
+
+}
+
+
+
+
+
+/*PASSWORD VALIDATION*/
+
+function pwdvalidation()
+
+{
+
+var pwd=document.getElementById("pwd").value;
+
+var reg = /^[a-zA-Z0-9]{6}$/;
+
+if(reg.test(pwd) == false)
+  
+  {
+	
+var msg="please enter valid Password (it must contains exactly 6 alphanumeric characters)";
+
+	alert(msg);
+	
+document.getElementById("pwd").focus();
+document.getElementById("pwd").select();
+
+	return false;
+
+    }
+
+  else{
+	
+return true;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FIRSTNAME VALIDATION*/
+
+
+
+
+function fnamevalidation()
+
+{
+
+var fname=document.getElementById("fname").value;
+
+var reg = /^((?:[A-z]+)[a-zA-Z])$/;
+ 
+if(fname==""||fname.length<2||fname.length>6)  
+{
+var msg=" firstname  should not be empty and it must contains 2 to 6 charcters";
+
+	alert(msg);
+document.getElementById("fname").focus();
+
+	document.getElementById("fname").select();
+     return false;
+}
+
+else if(reg.test(fname) == false)
+ 
+   {
+	
+var msg="FirstName must have  only characters";
+
+	alert(msg);
+        document.getElementById("fname").focus();
+
+	document.getElementById("fname").select();
+          return false;
+
+    }
+ 
+ else 
+    
+    {  
+ 
+	
+return true;
+
+}
+
+}
+
+
+
+/*LASTNAME VALIDATION*/
+
+
+function lnamevalidation()
+
+{
+
+var lname=document.getElementById("lname").value;
+
+var reg = /^((?:[A-z]+)[a-zA-Z])$/;
+ 
+if(lname==""||lname.length<2||lname.length>16)  
+{
+var msg="please should not be empty and it must contains 2 to 16 charcters";
+
+	alert(msg);
+document.getElementById("lname").focus();
+
+	document.getElementById("lname").select();
+     return false;
+}
+
+else if(reg.test(lname) == false)
+ 
+   {
+	
+var msg="LastName must have  only characters";
+
+	alert(msg);
+        document.getElementById("lname").focus();
+
+ 	document.getElementById("lname").select();
+          return false;
+
+    }
+ 
+ else 
+    
+    {  
+ 
+	
+return true;
+
+}
+
+}
+
+
+/*PROFLIEPIC VALIDATION*/
+
+
+function profilepicvalidation()
+
+{
+
+
+var img=document.getElementById("browse").value;
+
+var value=img;
+
+var patt1 = /.png/;
+var patt2 = /.gif/;
+var patt3 = /.jpeg/;
+var patt4 = /.jpg/;
+
+if(img=="")
+
+{
+
+alert("plz select image");
+ 
+document.getElementById("browse").focus();
+
+return false;
+
+}
+
+else 
+     if(patt1.test(value)==true||patt2.test(value)==true||patt3.test(value)==true||patt4.test(value)==true)
+
+{
+
+return true;
+
+}
+alert(" it's a wrong format .please select .png");
+
+ document.getElementById("browse").focus();
+
+return false;
+
+}
+
+
+
+/*GENDER VALIDATION*/
+
+function checkgender()
+
+{
+
+var male=document.getElementById("male");
+
+var female=document.getElementById("female");
+
+if(male.checked==false&&female.checked==false)
+
+{
+
+alert("plz fill it");
+
+return false;
+male.focus();
+}
+
+if(male.checked==true)
+
+{
+ 
+female.checked==false;
+
+return true;
+
+}
+
+else if(female.checked==true)
+ 
+{
+
+male.checked==false;
+
+return true;
+
+}
+
+
+}
+
+
+
+
+
+
+/* dob validations*/
+function dobvalidation()
+{
+
+if(dayvalidation()==true)
+ {
+
+if(monthvalidation()==true)
+     { 
+      if(yearvalidation()==true)
+       return true;
+     }   
+
+ } 
+return false;
+
+}
+
+/*day validation*/
+
+
+function dayvalidation()
+
+{
+
+var x1 = document.getElementById("day");
+
+if(x1.selectedIndex=="")
+
+  {
+
+   
+ alert("fill day");
+ document.getElementById("day").focus();
+
+
+ return false;   
+            
+  }
+
+
+else
+
+{
+
+ 
+return true;
+
+}
+
+
+}
+
+
+/*month validation*/
+
+
+function monthvalidation()
+
+{
+
+var x2 = document.getElementById("month");
+
+if(x2.selectedIndex=="")
+
+  {
+   alert("fill month");
+
+  document.getElementById("month").focus();
+ 
+ 
+return false;  
+             
+  }
+
+else
+
+{
+
+ 
+return true;
+
+}
+
+
+}
+
+/*year validation*/
+
+
+function yearvalidation()
+
+{
+
+var x3 = document.getElementById("year");
+
+if(x3.selectedIndex=="")
+ 
+ {
+
+   alert("fill year");
+
+document.getElementById("year").focus();
+ 
+
+    
+return false; 
+              
+  }
+
+else
+
+{
+
+ 
+return true;
+
+}
+
+}
+
+
+/* Hobbies validation */
+ function hobbiesvalidation()
+{
+var h1=document.getElementById("h1");
+
+var h2=document.getElementById("h2");
+
+var h3=document.getElementById("h3");
+
+var h4=document.getElementById("h4");
+
+var h5=document.getElementById("h5");
+
+var h6=document.getElementById("h6");
+
+
+if((h1.checked==false)&&(h2.checked==false)&&(h3.checked==false)&&(h4.checked==false)&&(h5.checked==false)&&(h6.checked==false))
+
+{
+alert("fill any one of these");
+h1.focus();
+return false;
+}
+
+/*if(h1.checked==true)
+{ 
+h2.checked==false;
+h3.checked==false;
+h4.checked==false;
+h5.checked==false;
+h6.checked==false;
+return true;
+}
+
+if(h2.checked==true)
+{ 
+h1.checked==false;
+h3.checked==false;
+h4.checked==false;
+h5.checked==false;
+h6.checked==false;
+
+return true;
+}
+
+if(h3.checked==true)
+{ 
+h1.checked==false;
+h2.checked==false;
+h4.checked==false;
+h5.checked==false;
+h6.checked==false;
+
+return true;
+}
+
+if(h4.checked==true)
+{
+h1.checked==false; 
+h2.checked==false;
+h3.checked==false;
+h5.checked==false;
+h6.checked==false;
+
+return true;
+}
+
+
+if(h5.checked==true)
+{ 
+h1.checked==false;
+h2.checked==false;
+h3.checked==false;
+h4.checked==false;
+h6.checked==false;
+
+return true;
+}
+
+if(h6.checked==true)
+{ 
+h1.checked==false;
+h2.checked==false;
+h3.checked==false;
+h4.checked==false;
+h5.checked==false;
+return true;
+}
+
+
+
+
+
+/*else if(female.checked==true)
+ 
+{
+male.checked==false;
+return true;
+}*/
+else
+return true;
+}
+
+
+
+
+/*country validation*/
+
+function countriesvalidation()
+
+{
+
+var con;
+
+
+var countries= document.getElementById("countries");
+
+var length=(countries.options.length); 
+
+if(countries.selectedIndex==0||countries.selectedIndex=="")
+
+{
+
+alert("u must fill it");
+
+return false;
+
+}
+
+
+else
+
+{ 
+count=0;
+
+for(con=1;con<length;con++)
+{
+if(countries.options[con].selected==true)
+  count=count+1;
+}
+return true;
+
+}
+
+
+
+}
+
+
+//alert(i);
+
+//var i=document.getElementsByTagName("option")[countries.selectedIndex].value;
+
+//var selected_option_value = countries.options[i].value;
+
+//alert(selected_option_value);
+
+//var sdValues = [];
+
+//sdValues.push(countries.options[i].value);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*PHONENUMBER VALIDATION*/
+
+
+function phonevalidation()
+
+{
+
+
+var phonenum=document.getElementById("phone").value;
+
+
+var reg = /^[+]\s([0-9]{2})\s\(([0-9]{3})\)\-([0-9]{3})\-([0-9]{4})$/;
+
+  if(reg.test(phonenum) == false)
+ 
+   {
+	
+    var msg="enter valid phonenumber like(+ 91 (888)-123-1234)";
+
+	alert(msg);
+	
+return false; 
+
+    }
+
+  else
+
+	return true;
+
+}
+
